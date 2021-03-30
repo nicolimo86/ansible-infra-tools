@@ -1,0 +1,14 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: create group 'vagrant'
+      ansible.builtin.group:
+        name: vagrant
+        state: present
+    - name: Add the user 'vagrant' belonging to group 'vagrant'
+      ansible.builtin.user:
+        name: vagrant
+        comment: "vagrant user"
+        group: vagrant
