@@ -1,0 +1,7 @@
+---
+# defaults file for install_dev_env
+packer_version: 1.7.0
+packer_arch: "amd64"
+packer_bin_path: /usr/local/bin
+taskfile_version: 3.2.2
+docker_dive_version: 0.9.2
