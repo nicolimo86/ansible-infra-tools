@@ -4,6 +4,8 @@ Ansible infra tools
 This role installs the tools that compose my development environment, that is a vagrant box (ubuntu).
 It installs the following tools:
 
+- terraform
+- aws-cli
 - packer
 - docker-dive
 - ansible
