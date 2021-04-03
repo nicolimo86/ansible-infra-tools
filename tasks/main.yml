@@ -74,7 +74,7 @@
 
 - name: Download aws cli
   unarchive:
-    src: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip"
+    src: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ awscli_version }}.zip"
     dest: "/tmp"
     remote_src: true
     mode: 0755
