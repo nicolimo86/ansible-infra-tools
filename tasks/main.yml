@@ -49,10 +49,10 @@
 
 - name: Download and unarchive Packer.
   unarchive:
-    src: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_{{ packer_arch }}.zip
-    dest: "{{ packer_bin_path }}"
+    src: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip
+    dest: "/usr/local/bin"
+    creates: "/usr/local/bin/packer"
     remote_src: true
-    creates: "{{ packer_bin_path }}/packer"
     mode: 0755
 
 - name: Install taskfile from deb
@@ -63,3 +63,11 @@
 - name: Install docker dive tool.
   apt:
     deb: https://github.com/wagoodman/dive/releases/download/v{{ docker_dive_version }}/dive_{{ docker_dive_version }}_linux_amd64.deb
+
+- name: Install Terraform
+  unarchive:
+    src: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
+    dest: "/usr/local/bin"
+    creates: "/usr/local/bin/terraform"
+    remote_src: true
+    mode: 0755
