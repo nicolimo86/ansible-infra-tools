@@ -71,3 +71,14 @@
     creates: "/usr/local/bin/terraform"
     remote_src: true
     mode: 0755
+
+- name: Download aws cli
+  unarchive:
+    src: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip"
+    dest: "/tmp"
+    remote_src: true
+    mode: 0755
+
+- name: Install aws cli
+  ansible.builtin.command:
+    cmd: /tmp/aws/install
