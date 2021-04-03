@@ -30,6 +30,8 @@ Role Variables
 The following variables are available:
 
     packer_version: 1.7.0
+    terraform_version: 0.14.9
+    awscli_version: 2.0.30
     taskfile_version: 3.2.2
     docker_dive_version: 0.9.2
 
