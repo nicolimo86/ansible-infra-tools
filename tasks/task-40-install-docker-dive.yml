@@ -1,0 +1,4 @@
+---
+- name: Install docker dive tool.
+  apt:
+    deb: https://github.com/wagoodman/dive/releases/download/v{{ docker_dive_version }}/dive_{{ docker_dive_version }}_linux_amd64.deb

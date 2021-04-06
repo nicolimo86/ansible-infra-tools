@@ -1,0 +1,4 @@
+---
+- name: Install taskfile from deb
+  apt:
+    deb: https://github.com/go-task/task/releases/download/v{{ taskfile_version }}/task_linux_amd64.deb

@@ -1,0 +1,46 @@
+---
+- name: apt | install python3.
+  become: true
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - python3
+      - python3-venv
+
+- name: Copy pip requirements.txt
+  copy:
+    src: "requirements.txt"
+    dest: "/tmp"
+    owner: "root"
+    group: "root"
+    mode: "0664"
+
+- name: Install virtualenv via pip
+  pip:
+    name: virtualenv
+    executable: pip3
+
+- name: Install pip requirements
+  pip:
+    requirements: /tmp/requirements.txt
+    virtualenv: /home/vagrant/venv_automation
+    virtualenv_python: python3
+
+- name: change ownership /home/vagrant/venv_automcation folder
+  ansible.builtin.file:
+    path: /home/vagrant/venv_automation
+    owner: vagrant
+    group: vagrant
+    recurse: yes
+    mode: "0764"
+
+- name: "venv | copy setenv.sh script in the HOME of the vagrant user"
+  copy:
+    src: "setenv.sh"
+    dest: "/home/vagrant"
+    owner: "vagrant"
+    group: "vagrant"
+    mode: "0764"

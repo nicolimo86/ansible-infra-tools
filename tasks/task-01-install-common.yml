@@ -1,0 +1,10 @@
+---
+- name: apt | install common packages.
+  become: true
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - unzip

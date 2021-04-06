@@ -1,0 +1,8 @@
+---
+- name: Download and unarchive Packer.
+  unarchive:
+    src: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip
+    dest: "/usr/local/bin"
+    creates: "/usr/local/bin/packer"
+    remote_src: true
+    mode: 0755
