@@ -1,4 +1,4 @@
-Ansible infra tools
+My dev tools 
 =========
 
 This role installs the tools that compose my development environment, that is a vagrant box (ubuntu).
