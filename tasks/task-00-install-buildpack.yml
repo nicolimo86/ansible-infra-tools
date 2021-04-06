@@ -1,0 +1,7 @@
+- name: Install Buildpack (pack)
+  unarchive:
+    src: "https://github.com/buildpacks/pack/releases/download/v{{ buildpack_version }}/pack-v{{ buildpack_version }}-linux.tgz"
+    dest: "/usr/local/bin"
+    creates: "/usr/local/bin/pack"
+    remote_src: true
+    mode: 0755
