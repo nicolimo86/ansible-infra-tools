@@ -14,6 +14,7 @@ It installs the following tools:
 - molecule
 - test-infra
 - task
+- buildpack
 - python3
 - pip3
 - virtualenv
