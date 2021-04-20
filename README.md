@@ -80,3 +80,15 @@ Example
 Create and configure the VM:
 
     vagrant up
+
+VSCode configuration
+----------------
+Install Remote Development plugin.
+Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
+    ext install ms-vscode-remote.vscode-remote-extensionpack
+
+Add Vagrant host to the ssh config:
+    vagrant ssh-config >> ~/.ssh/config
+
+Connect to the Vagrant host from inside VSCode:
+    F1 -> Remote-SSH: Connect to Host...
